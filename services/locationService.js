@@ -5,7 +5,7 @@ const getDistances = async (adresses) => {
     adresses = adresses.split(";").filter((value)=> value !== "");   
     let distances = [];
     if(adresses) 
-    return {message: 'Para calcular as distãncias deve conter dois ou mais endereços'}   
+    return {message: 'Para calcular as distâncias deve conter dois ou mais endereços'}   
     let locations = await getLocations(adresses);    
     for (origin of locations) {
         for (destiny of locations){
