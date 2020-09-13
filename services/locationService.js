@@ -2,9 +2,10 @@ const geoCodingClient = require("../client/geoCodingClient");
 
 
 const getDistances = async (adresses) => {
-    adresses = adresses.split(";");   
+    adresses = adresses.split(";").filter((value)=> value !== "");   
     let distances = [];
-    
+    if(adresses) 
+    return {message: 'Para calcular as distãncias deve conter dois ou mais endereços'}   
     let locations = await getLocations(adresses);    
     for (origin of locations) {
         for (destiny of locations){
